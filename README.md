@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redite Bista ✨</title>
+    <title>Redite Bista Kawaii Zone ✨</title>
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
-            background: linear-gradient(135deg, #ffcce6, #ccf2ff);
+            background: linear-gradient(135deg, #ffcce6, #ccf2ff, #e0f7fa);
             text-align: center;
             padding: 30px;
             min-height: 100vh;
+            overflow-x: hidden;
         }
         
         .hidden-message {
@@ -32,6 +33,8 @@
             font-weight: bold;
             transition: all 0.3s;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
         }
         
         .instagram {
@@ -49,8 +52,13 @@
             color: white;
         }
         
+        .discord {
+            background: #5865F2;
+            color: white;
+        }
+        
         .social-links a:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: 0 8px 15px rgba(0,0,0,0.2);
         }
         
@@ -60,27 +68,70 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
             margin-top: 30px;
             background: white;
-            padding: 15px;
+            padding: 15px 25px;
             border-radius: 20px;
             display: inline-block;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 10;
         }
         
         .cute-emoji {
             font-size: 30px;
             margin: 0 5px;
+            vertical-align: middle;
         }
         
-        .decoration {
+        /* Floating anime characters */
+        .anime-character {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            animation: float 6s ease-in-out infinite;
+            z-index: 1;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+        
+        /* Different animations for each character */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        @keyframes float2 {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(-5deg); }
+        }
+        
+        @keyframes float3 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(10px, -20px) rotate(5deg); }
+            50% { transform: translate(0, -30px) rotate(0deg); }
+            75% { transform: translate(-10px, -20px) rotate(-5deg); }
+        }
+        
+        /* Decorative elements */
+        .hearts {
             position: absolute;
             font-size: 20px;
-            opacity: 0.6;
+            color: #ff66b3;
             animation: float 4s ease-in-out infinite;
+            opacity: 0.7;
         }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
+        .stars {
+            position: absolute;
+            font-size: 18px;
+            color: #ffcc00;
+            animation: spin 5s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
@@ -88,11 +139,17 @@
     <!-- Hidden message -->
     <div class="hidden-message">Hi i am Redite</div>
     
-    <!-- Floating decorations -->
-    <div class="decoration" style="top: 10%; left: 10%;">🌸</div>
-    <div class="decoration" style="top: 20%; right: 15%;">✨</div>
-    <div class="decoration" style="bottom: 15%; left: 20%;">🍭</div>
-    <div class="decoration" style="bottom: 25%; right: 10%;">🎀</div>
+    <!-- Floating anime characters (using emoji as placeholders) -->
+    <div class="anime-character" style="top: 15%; left: 5%; animation: float 7s ease-in-out infinite; font-size: 80px;"background-image: url('https://static.vecteezy.com/system/resources/previews/048/893/342/non_2x/cool-boys-smile-with-the-gray-hair-cartoon-free-vector.jpg')"></div>
+    <div class="anime-character" style="top: 25%; right: 8%; animation: float2 8s ease-in-out infinite; font-size: 80px;">🐱</div>
+    <div class="anime-character" style="bottom: 20%; left: 10%; animation: float3 9s ease-in-out infinite; font-size: 80px;">🌸</div>
+    <div class="anime-character" style="bottom: 30%; right: 5%; animation: float 7.5s ease-in-out infinite; font-size: 80px;">🦊</div>
+    
+    <!-- Decorative elements -->
+    <div class="hearts" style="top: 10%; right: 20%;">💖</div>
+    <div class="hearts" style="bottom: 15%; left: 15%;">💗</div>
+    <div class="stars" style="top: 20%; left: 25%;">🌟</div>
+    <div class="stars" style="bottom: 25%; right: 20%;">⭐</div>
     
     <!-- Social Links -->
     <div class="social-links">
@@ -102,14 +159,21 @@
         <a href="https://www.facebook.com/reditebista1" class="facebook" target="_blank">
             <span class="cute-emoji">👍</span> Facebook
         </a>
-        <a href="https://www.youtube.com/@reditebista4788" class="youtube" target="_blank">
+        <a href="https://https://www.youtube.com/@reditebista4788" class="youtube" target="_blank">
             <span class="cute-emoji">▶️</span> YouTube
+        </a>
+        <a href="https://discord.gg/edZdcyVn" class="discord" target="_blank">
+            <span class="cute-emoji">💬</span> Discord
         </a>
     </div>
     
     <!-- Creator Text -->
     <div class="creator-text">
-        Redite Bista <span class="cute-emoji">✨</span> content creator
+        Redite Bista <span class="cute-emoji">🎀</span> content creator <span class="cute-emoji">✨</span>
     </div>
+    
+    <!-- More decorative elements -->
+    <div class="hearts" style="top: 80%; left: 30%;">💞</div>
+    <div class="stars" style="top: 70%; right: 30%;">💫</div>
 </body>
 </html>
